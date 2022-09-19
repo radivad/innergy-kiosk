@@ -136,6 +136,10 @@ If another process generates errors on logon add it to the whitelist using the s
 
 Please see the reference file for recommended [Chrome group policy settings](GPO.md).
 
+### Set Administrative Password
+
+Set a password for the initial user created during install if not already done. This login can be used for all administrative and maintenance tasks.
+
 ### Enable Autologon
 
 Update the registry to [enable autologon](https://learn.microsoft.com/en-us/troubleshoot/windows-server/user-profiles-and-logon/turn-on-automatic-logon) for the ``` innergy ``` user or use the [registry file](AutoLogon.reg).
