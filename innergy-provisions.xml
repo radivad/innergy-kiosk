@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AssignedAccessConfiguration 
+    xmlns="http://schemas.microsoft.com/AssignedAccess/2017/config"
+    xmlns:rs5="http://schemas.microsoft.com/AssignedAccess/201810/config"
+    >
+    <Profiles>
+        <Profile Id="{8252CB4A-CAE0-4AA1-A402-AB242FF45943}"><!--Needs GUID that matches profile ID below-->
+            <AllAppsList>
+                <AllowedApps>
+                    <App AppUserModelId="Windows.PrintDialog_cw5n1h2txyewy" />
+                    <App AppUserModelId="windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel" />
+                    <App AppUserModelId="AppUp.IntelGraphicsExperience_1.100.3408.0_x64__8j3eq9eme6ctt" /><!--Needed for certain Intel chipset driver packages to not display popover warning-->
+                    <App DesktopAppPath="%PROGRAMFILES%\Google\Chrome\Application\chrome.exe" rs5:AutoLaunch="true" />
+                </AllowedApps>
+            </AllAppsList>
+            <rs5:FileExplorerNamespaceRestrictions>
+                <rs5:AllowedNamespace Name="Downloads"/>
+            </rs5:FileExplorerNamespaceRestrictions>
+            <StartLayout>
+                <![CDATA[<LayoutModificationTemplate xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">
+                      <LayoutOptions StartTileGroupCellWidth="6" />
+                      <DefaultLayoutOverride>
+                        <StartLayoutCollection>
+                          <defaultlayout:StartLayout GroupCellWidth="6">
+                            <start:Group Name="">
+                            <start:DesktopApplicationTile Size="2x2" Column="0" Row="0" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Google Chrome.lnk" />
+                            </start:Group>
+                          </defaultlayout:StartLayout>
+                        </StartLayoutCollection>
+                      </DefaultLayoutOverride>
+                    </LayoutModificationTemplate>
+                ]]>
+            </StartLayout>
+            <Taskbar ShowTaskbar="true"/>
+        </Profile>
+    </Profiles>
+    <Configs>
+        <Config>
+            <Account>innergy</Account>
+            <DefaultProfile Id="{8252CB4A-CAE0-4AA1-A402-AB242FF45943}"/><!--Needs GUID that matches profile ID above-->
+        </Config>
+    </Configs>
+</AssignedAccessConfiguration>
