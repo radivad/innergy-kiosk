@@ -1,4 +1,4 @@
-# Innergy Kiosk Setup process
+# Innergy Kiosk Setup Process
 
 ## Background
 
