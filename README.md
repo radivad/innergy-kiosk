@@ -102,6 +102,11 @@ Add the ``` innergy ``` kiosk user without a password using computer management 
 PS C:\> New-LocalUser -Name "innergy" -FullName "Innergy" -NoPassword -PasswordNeverExpires -UserMayNotChangePassword
 ```
 
+Add the ``` innergy ``` kiosk user to the ``` Users ``` group:
+```
+PS C:\> Add-LocalGroupMember -Group "Users" -Member "innergy"
+```
+
 Logon to the innergy user account and set the desired screen resolution.
 
 Add registry entries for [pseudo MDM appearance](https://hitco.at/blog/apply-edge-policies-for-non-domain-joined-devices/) by editing the registry to match or running the [MDM registry file](MDM-FakeEnrollment-Win10.reg) as the administrative user.
