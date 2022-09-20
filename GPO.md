@@ -43,5 +43,5 @@ Download the [Chrome policy](https://support.google.com/chrome/a/answer/187202?h
 
 | Policy  | Setting | Parameter | Required |
 | -- | -- | -- | -- |
-| Select the target Feature Update version | Enabled | Which WIndows product version would you like to receive feature updates for? = "Windows 10" | Optional |
-| Select the target Feature Update version | Enabled | Target Version for Feature Updates = "21H2" | Optional |
+| Select the target Feature Update version | Enabled | Which WIndows product version would you like to receive feature updates for? = "Windows 10" | Required |
+| Select the target Feature Update version | Enabled | Target Version for Feature Updates = "21H2" | Required |

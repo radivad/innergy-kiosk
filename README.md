@@ -11,8 +11,8 @@ This setup and configuration process creates a locked down kiosk terminal that l
 ## System Requirements
 
 - Windows 10 Pro, Pro for Workstations or Enterprise for use on kiosk
-  - Not tested on Windows 11, no compatiblity issues expected
-  - If using Windows 11, skip the section preventing the Windows 11 upgrade
+  - Multi-app kiosk on Windows 11 is not officialy supported as of September 2022
+  - Not successfully tested on Windows 11, compatiblity issues expected if supported in the future
 - *Optional* RFID reader
 - Computer running Windows 7+, Server 2008R2+ for provisioning package creation
 
@@ -95,8 +95,6 @@ Install Windows. Upon initital boot do not connect the kiosk to the internet, th
 
 After initial login activate Windows, install all updates, patches, drivers, etc. and complete standard computer setup tasks. 
 
-Optionally, set a Windows version through group policy to prevent an unexpected Windows 11 upgrade. See [Computer Configuration > Administrative Templates > Windows Components > Windows Update > Windows Updates for Business](GPO.md)
-
 Add the ``` innergy ``` kiosk user without a password using computer management or with PowerShell:
 ```
 PS C:\> New-LocalUser -Name "innergy" -FullName "Innergy" -NoPassword -PasswordNeverExpires -UserMayNotChangePassword
@@ -139,7 +137,9 @@ If another process generates errors on logon add it to the whitelist using the s
 
 ### Download and install [Chrome GPOs](https://support.google.com/chrome/a/answer/187202) on kiosk computer.
 
-Please see the reference file for recommended [Chrome group policy settings](GPO.md).
+Please see the reference file for recommended [group policy settings](GPO.md).
+
+Set a Windows version through group policy to prevent an unexpected Windows 11 upgrade. See [Computer Configuration > Administrative Templates > Windows Components > Windows Update > Windows Updates for Business](GPO.md)
 
 ### Set Administrative Password
 
