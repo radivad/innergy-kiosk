@@ -30,7 +30,7 @@ Download the [Chrome policy](https://support.google.com/chrome/a/answer/187202?h
 | -- | -- | -- | -- |
 | Enable saving passwords to the password manager | Disabled | | Recommended |
 
-## Computer Configuration > Policies > Administrative Templates > Google > Google Chrome > Startup, Home page and New Tab page
+### Computer Configuration > Policies > Administrative Templates > Google > Google Chrome > Startup, Home page and New Tab page
 
 | Policy  | Setting | Parameter | Required |
 | -- | -- | -- | -- |
@@ -39,7 +39,7 @@ Download the [Chrome policy](https://support.google.com/chrome/a/answer/187202?h
 | Configure the New Tab page URL | Enabled | https://app.innergy.com/kiosk/ | Required |
 | URLs to open on startup | Enabled | https://app.innergy.com/kiosk/ | Required |
 
-## Computer Configuration > Administrative Templates > Windows Components > Windows Update > Windows Updates for Business
+### Computer Configuration > Administrative Templates > Windows Components > Windows Update > Windows Updates for Business
 
 | Policy  | Setting | Parameter | Required |
 | -- | -- | -- | -- |
