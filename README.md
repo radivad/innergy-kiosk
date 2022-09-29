@@ -18,7 +18,7 @@ This setup and configuration process creates a locked down kiosk terminal that l
 
 ## Preparation on Another Machine
 
-Build / edit [XML](innergy-provisions.xml) configuration for [multi-app kiosk](https://learn.microsoft.com/en-us/windows/configuration/lock-down-windows-10-to-specific-apps) provisioning package creation. The sample below is was developed for this guide.
+Build / edit [XML](innergy-provisions.xml) configuration for [multi-app kiosk](https://learn.microsoft.com/en-us/windows/configuration/lock-down-windows-10-to-specific-apps) provisioning package creation. The sample below was developed for this guide.
 
 ### Sample XML File - Replace GUID Instances as Necessary
 ``` AppUp.IntelGraphicsExperience_1.100.3408.0_x64__8j3eq9eme6ctt ``` may differ or be omitted depending on hardware specifications.
