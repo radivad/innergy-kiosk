@@ -1,4 +1,6 @@
-# Chrome Group Policy Settings
+# Group Policy Settings
+
+## Chrome Policies
 
 Download the [Chrome policy](https://support.google.com/chrome/a/answer/187202?hl=en) and follow the instructions to set up for your kiosk device.
 
@@ -38,6 +40,8 @@ Download the [Chrome policy](https://support.google.com/chrome/a/answer/187202?h
 | Configure the home page URL | Enabled | https://app.innergy.com/kiosk/ | Required |
 | Configure the New Tab page URL | Enabled | https://app.innergy.com/kiosk/ | Required |
 | URLs to open on startup | Enabled | https://app.innergy.com/kiosk/ | Required |
+
+## Windows Update Policies
 
 ### Computer Configuration > Administrative Templates > Windows Components > Windows Update > Windows Updates for Business
 
