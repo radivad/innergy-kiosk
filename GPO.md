@@ -17,6 +17,7 @@ Download the [Chrome policy](https://support.google.com/chrome/a/answer/187202?h
 | Control where Developer Tools can be used | Enabled | Disallow usage of the Developer Tools | Optional |
 | Enable AutoFill for addresses | Disabled | | Recommended |
 | Enable AutoFill for credit cards | Disabled | | Recommended |
+| Set Google Chrome as Default Browser | Disabled | | Recommended |
 
 ### Computer Configuration > Policies > Administrative Templates > Google > Google Chrome > Extensions
 
@@ -41,7 +42,12 @@ Download the [Chrome policy](https://support.google.com/chrome/a/answer/187202?h
 | Configure the New Tab page URL | Enabled | https://app.innergy.com/kiosk/ | Required |
 | URLs to open on startup | Enabled | https://app.innergy.com/kiosk/ | Required |
 
-## Windows Update Policies
+## Windows Policies
+
+### Computer Configuration > Administrative Templates > Windows Components > News and interests
+| Policy  | Setting | Parameter | Required |
+| -- | -- | -- | -- |
+| Enable news and interests on the taskbar | Disabled | | Recommended |
 
 ### Computer Configuration > Administrative Templates > Windows Components > Windows Update > Windows Updates for Business
 
