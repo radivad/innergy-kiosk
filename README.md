@@ -151,7 +151,7 @@ Update the registry to [enable autologon](https://learn.microsoft.com/en-us/trou
 
 ## Testing and Completion
 
-Reboot the computer and let innergy logon and open Chrome to the [Innergy kiosk page](https://app.innergy.com/kiosk/). If the screen locks from timeout, simply login as ``` Innergy ``` by selecting the ``` innergy ``` user (no password required). Chrome is the only available application and is restricted to Innergy domains. The assigned access profile also locks the ``` innergy ``` user to only showing start menu icons defined in the XML, allows for logout and shutdown/reboot and disabled changing most other options. All other system operations must be completed from the administrative account or another user that does not have the provisioning profile assigned to the account.
+Reboot the computer and let innergy logon and open Chrome to the [Innergy kiosk page](https://app.innergy.com/kiosk/). Chrome may display an error page the first time it runs on autologon if policy settings were not applied before executing. Reboot once more to apply policies. If the screen locks from timeout, simply login as ``` Innergy ``` by selecting the ``` innergy ``` user (no password required). Chrome is the only available application and is restricted to Innergy domains. The assigned access profile also locks the ``` innergy ``` user to only showing start menu icons defined in the XML, allows for logout and shutdown/reboot and disabled changing most other options. All other system operations must be completed from the administrative account or another user that does not have the provisioning profile assigned to the account.
 
 ## RFID Reader Integration
 
