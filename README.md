@@ -111,7 +111,7 @@ PS C:\> Add-LocalGroupMember -Group "Users" -Member "innergy"
 
 Logon to the innergy user account and set the desired screen resolution.
 
-Add registry entries for [pseudo MDM appearance](https://hitco.at/blog/apply-edge-policies-for-non-domain-joined-devices/) by editing the registry to match or running the [MDM registry file](MDM-FakeEnrollment-Win10.reg) as the administrative user.
+Add registry entries for [pseudo MDM appearance](https://hitco.at/blog/apply-edge-policies-for-non-domain-joined-devices/) by editing the registry to match or importing the [MDM registry file](MDM-FakeEnrollment-Win10.reg) as the administrative user.
 
 Add the provisioning package to the kiosk using PowerShell:
 ```
