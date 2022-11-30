@@ -139,7 +139,7 @@ If another process generates errors on logon add it to the whitelist using the s
 
 ### Alternative AppLocker Setup
 
-**AppLocker removal does not seem to be requied on Windows 10 build 22H2 - the kiosk provisioning did not create AppLocker rules while testing, would recommend verifying no rules are in place on first installation during configuration.**
+**AppLocker removal does not seem to be required on Windows 10 build 22H2 - the kiosk provisioning did not create AppLocker rules while testing, would recommend verifying no rules are in place on first installation during configuration.**
 
 AppLocker can be painful to manage in this environment and may not be required on a browser kiosk with restricted Chrome policies applied in a physcially controlled production environment. This is especially true if the machine resides on a separated guest network without access to internal resources and can be rebuilt quickly if problems arise. The tradeoff between best practices security configuration and ease of use and management led us to simply disable AppLocker for our kiosk setup and significantly reduced the time spent dealing with user blocking popup screens.
 
