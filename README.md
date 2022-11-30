@@ -11,8 +11,8 @@ This setup and configuration process creates a locked down kiosk terminal that l
 ## System Requirements
 
 - Windows 10 Pro, Pro for Workstations or Enterprise for use on kiosk
-  - Multi-app kiosk on Windows 11 is not officialy supported as of September 2022
-  - Not successfully tested on Windows 11, compatiblity issues expected if supported in the future
+  - Version 22H2 recommended
+  - Multi-app kiosk on Windows 11 is not officially supported as of December 2022 - test support is in build 25169
 - *Optional* RFID reader
 - Computer running Windows 7+, Server 2008R2+ for provisioning package creation
 
@@ -93,12 +93,16 @@ Install Windows. Upon initital boot do not connect the kiosk to the internet, th
 
 ### Initial Configuration
 
-After initial login activate Windows, install all updates, patches, drivers, etc. and complete standard computer setup tasks. 
+After initial login activate Windows, install all updates, patches, drivers, etc. and complete standard computer setup tasks.
+
+Download and install [Chrome](https://www.google.com/chrome/) from the administrative account.
 
 Add the ``` innergy ``` kiosk user without a password using computer management or with PowerShell:
 ```
 PS C:\> New-LocalUser -Name "innergy" -FullName "Innergy" -NoPassword -PasswordNeverExpires -UserMayNotChangePassword
 ```
+
+```-PasswordNeverExpires``` may cause the command to fail, if so remove the switch and set the option after user creation through Computer Management
 
 Add the ``` innergy ``` kiosk user to the ``` Users ``` group:
 ```
@@ -118,8 +122,6 @@ If updating the package from a previous install add -ForceInstall to overwrite
 Add-ProvisioningPackage -PackagePath "D:\innergy.ppkg" -ForceInstall
 ```
 
-Download and install [Chrome](https://www.google.com/chrome/) from the administrative account.
-
 ### Applocker Fixes for Preinstalled Apps
 
 Whitelist Cortana to avoid a full screen error message that applocker has prevented it from running and logging an error about AppLocker blocking backgroundTaskHost.exe
@@ -134,6 +136,18 @@ Right click and "Create New Rule" and click next through the defaults to the "Pu
 ![AppLocker Rule Setup](./grpr2.png)
 
 If another process generates errors on logon add it to the whitelist using the same process or prevent it from running on start.
+
+### Alternative AppLocker Setup
+
+**AppLocker removal does not seem to be requied on Windows 10 build 22H2 - the kiosk provisioning did not create AppLocker rules while testing, would recommend verifying no rules are in place on first installation during configuration.**
+
+AppLocker can be painful to manage in this environment and may not be required on a browser kiosk with restricted Chrome policies applied in a physcially controlled production environment. This is especially true if the machine resides on a separated guest network without access to internal resources and can be rebuilt quickly if problems arise. The tradeoff between best practices security configuration and ease of use and management led us to simply disable AppLocker for our kiosk setup and significantly reduced the time spent dealing with user blocking popup screens.
+
+``` Computer Configuration > Windows Settings > Security Settings > Application Control Policies ```
+
+Right click "AppLocker", select "Clear Policy" and answer yes to the prompt. This will clear all existing AppLocker rules including the automatically generated rules created by the kiosk setup process and prevent AppLocker from blocking any apps and background processes.
+
+![AppLocker Rules Reset](./grpr3.png)
 
 ### Download and install [Chrome GPOs](https://support.google.com/chrome/a/answer/187202) on kiosk computer.
 
