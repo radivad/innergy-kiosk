@@ -149,6 +149,8 @@ Right click "AppLocker", select "Clear Policy" and answer yes to the prompt. Thi
 
 ![AppLocker Rules Reset](./grpr3.png)
 
+Delete all files and folders in the ``` %WINDIR%\system32\Applocker ``` directory and reboot the system to remove any remaining AppLocker rules.
+
 ### Download and install [Chrome GPOs](https://support.google.com/chrome/a/answer/187202) on kiosk computer.
 
 Please see the reference file for recommended [group policy settings](GPO.md).
