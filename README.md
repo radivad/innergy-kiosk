@@ -151,6 +151,19 @@ Right click "AppLocker", select "Clear Policy" and answer yes to the prompt. Thi
 
 Delete all files and folders in the ``` %WINDIR%\system32\Applocker ``` directory and reboot the system to remove any remaining AppLocker rules.
 
+### Disable Automatic Disk Cleanup Task
+
+Windows ships with a default task to run cleanmgr.exe with the autoclean flag to help prevent disk space exhaustion due to temp file growth. With any reasonable size disk this should not be a problem with a kiosk setup. Failure to disable the cleanup process task will result in a user blocking error message. 
+
+Disabling the task using Task Scheduler:
+
+Open the Task Scheduler program, expand ``` Task Scheduler Library > Microsoft > Windows > Disk Cleanup ```, select the ``` SilentCleanup ``` task and disable the task.
+
+Disabling the task using Powershell:
+```
+PS C:\> Disable-ScheduledTask -TaskName "SilentCleanup" -TaskPath "\Microsoft\Windows\DiskCleanup\"
+```
+
 ### Download and install [Chrome GPOs](https://support.google.com/chrome/a/answer/187202) on kiosk computer.
 
 Please see the reference file for recommended [group policy settings](GPO.md).
