@@ -153,6 +153,10 @@ Disabling the task using Powershell:
 PS C:\> Disable-ScheduledTask -TaskName "SilentCleanup" -TaskPath "\Microsoft\Windows\DiskCleanup\"
 ```
 
+### Check Power Settings
+
+Check and alter the computer sleep timeout settings appropriate for the operating environment and business conditions.
+
 ### Set Administrative Password
 
 Set a password for the initial user created during install if not already done. This login can be used for all administrative and maintenance tasks.
