@@ -122,24 +122,13 @@ If updating the package from a previous install add -ForceInstall to overwrite
 Add-ProvisioningPackage -PackagePath "D:\innergy.ppkg" -ForceInstall
 ```
 
-### Applocker Fixes for Preinstalled Apps
+### Download and install [Chrome GPOs](https://support.google.com/chrome/a/answer/187202) on kiosk computer.
 
-Whitelist Cortana to avoid a full screen error message that applocker has prevented it from running and logging an error about AppLocker blocking backgroundTaskHost.exe
+Please see the reference file for recommended [group policy settings](GPO.md).
 
-Open the local group policy editor (gpedit.msc) and expand
-``` Computer Configuration > Windows Settings > Security Settings > Application Control Policies > AppLocker > Packaged app Rules ```
+Set a Windows version through group policy to prevent an unexpected Windows 11 upgrade. See [Computer Configuration > Administrative Templates > Windows Components > Windows Update > Windows Updates for Business](GPO.md)
 
-Right click and "Create New Rule" and click next through the defaults to the "Publisher" section. Click the "Select" button under "Use an installed packaged app as a reference" and select Cortana from the list, then click "Create" to generate the rule.
-
-![GPO Location](./grpr1.png)
-
-![AppLocker Rule Setup](./grpr2.png)
-
-If another process generates errors on logon add it to the whitelist using the same process or prevent it from running on start.
-
-### Alternative AppLocker Setup
-
-**AppLocker removal does not seem to be required on Windows 10 build 22H2 - the kiosk provisioning did not create AppLocker rules while testing, would recommend verifying no rules are in place on first installation during configuration.**
+### AppLocker Setup
 
 AppLocker can be painful to manage in this environment and may not be required on a browser kiosk with restricted Chrome policies applied in a physcially controlled production environment. This is especially true if the machine resides on a separated guest network without access to internal resources and can be rebuilt quickly if problems arise. The tradeoff between best practices security configuration and ease of use and management led us to simply disable AppLocker for our kiosk setup and significantly reduced the time spent dealing with user blocking popup screens.
 
@@ -163,12 +152,6 @@ Disabling the task using Powershell:
 ```
 PS C:\> Disable-ScheduledTask -TaskName "SilentCleanup" -TaskPath "\Microsoft\Windows\DiskCleanup\"
 ```
-
-### Download and install [Chrome GPOs](https://support.google.com/chrome/a/answer/187202) on kiosk computer.
-
-Please see the reference file for recommended [group policy settings](GPO.md).
-
-Set a Windows version through group policy to prevent an unexpected Windows 11 upgrade. See [Computer Configuration > Administrative Templates > Windows Components > Windows Update > Windows Updates for Business](GPO.md)
 
 ### Set Administrative Password
 
