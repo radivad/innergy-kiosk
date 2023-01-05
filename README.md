@@ -104,6 +104,10 @@ New-LocalUser -Name "innergy" -FullName "Innergy" -NoPassword -PasswordNeverExpi
 
 ```-PasswordNeverExpires``` may cause the command to fail, if so remove the switch and set the option after user creation through Computer Management
 
+```
+New-LocalUser -Name "innergy" -FullName "Innergy" -NoPassword -UserMayNotChangePassword
+```
+
 Add the ``` innergy ``` kiosk user to the ``` Users ``` group:
 ```
 Add-LocalGroupMember -Group "Users" -Member "innergy"
