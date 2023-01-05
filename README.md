@@ -99,14 +99,14 @@ Download and install [Chrome](https://www.google.com/chrome/) from the administr
 
 Add the ``` innergy ``` kiosk user without a password using computer management or with PowerShell:
 ```
-PS C:\> New-LocalUser -Name "innergy" -FullName "Innergy" -NoPassword -PasswordNeverExpires -UserMayNotChangePassword
+New-LocalUser -Name "innergy" -FullName "Innergy" -NoPassword -PasswordNeverExpires -UserMayNotChangePassword
 ```
 
 ```-PasswordNeverExpires``` may cause the command to fail, if so remove the switch and set the option after user creation through Computer Management
 
 Add the ``` innergy ``` kiosk user to the ``` Users ``` group:
 ```
-PS C:\> Add-LocalGroupMember -Group "Users" -Member "innergy"
+Add-LocalGroupMember -Group "Users" -Member "innergy"
 ```
 
 Logon to the innergy user account and set the desired screen resolution.
@@ -150,7 +150,7 @@ Open the Task Scheduler program, expand ``` Task Scheduler Library > Microsoft >
 
 Disabling the task using Powershell:
 ```
-PS C:\> Disable-ScheduledTask -TaskName "SilentCleanup" -TaskPath "\Microsoft\Windows\DiskCleanup\"
+Disable-ScheduledTask -TaskName "SilentCleanup" -TaskPath "\Microsoft\Windows\DiskCleanup\"
 ```
 
 ### Check Power Settings
