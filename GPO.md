@@ -12,6 +12,9 @@ Download the [Chrome policy](https://support.google.com/chrome/a/answer/187202?h
 | -- | -- | -- | -- |
 | Allow access to a list of URLs | Enabled | innergy.com | Required |
 | Allow access to a list of URLs | Enabled | app.innergy.com | Required|
+| Allow access to a list of URLs | Enabled | chrome://print | Recommended|
+| Allow access to a list of URLs | Enabled | chrome-untrusted://print | Recommended|
+| Allow access to a list of URLs | Enabled | chrome://extensions | Recommended|
 | Block access to a list of URLs | Enabled | * | Required |
 | Browser sign in settings | Enabled | Disable browser sign-in | Required |
 | Control where Developer Tools can be used | Enabled | Disallow usage of the Developer Tools | Optional |
